@@ -24,13 +24,13 @@ var appendImage = function (url) {
   document.getElementById('images').appendChild(imgEl);
 }
  
-var getImages = function (params) {
-  params = {};
-  params.limit = params.limit || 100;
-  params.category = params.category || 'cats';
+var getImages = function (limit, category) {
+  limit = limit || 100;
+  category = category || 'cats';
+  console.log(limit, category);
   var url = 'https://www.reddit.com/r/pics/search.json?q=';
-  url += params.category;
-  url += '&limit='+ params.limit;
+  url += category;
+  url += '&limit='+ limit;
 
   get(url, function (status, headers, body) {
     var response = JSON.parse(body);
@@ -41,6 +41,12 @@ var getImages = function (params) {
         });
 
     });
+}
+
+function getParams(form){
+  console.log(form[0].value, form[1].value);
+
+  getImages(form[0].value, form[1].value);
   return false;
 }
                  

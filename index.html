@@ -8,12 +8,11 @@
 <body>
     
   <div class="form-cnt">
-    <form>
+    <form onsubmit="return getParams(this)">
       <div class="field">
         <span>max number of images: </span>
         <select name="number-images">
                     <option disabled selected value>--</option>
-                    <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
@@ -24,7 +23,7 @@
         <span>category: </span>
         <input type="text">
       </div> 
-      <button class="field" onclick="return getImages()">Get images</button>
+      <button class="field" type="submit" >Get images</button>
     </form>
   </div>
   <div id="images">
