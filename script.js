@@ -34,7 +34,6 @@ var getImages = function (params) {
 
   get(url, function (status, headers, body) {
     var response = JSON.parse(body);
-    console.log(response.data.children);
     _.each(response.data.children, function (child) {
       var url = child.data.url;
       appendImage(url);
@@ -42,5 +41,6 @@ var getImages = function (params) {
         });
 
     });
+  return false;
 }
                  

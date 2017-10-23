@@ -6,11 +6,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="images">
-        Loading ..
-    </div>
-    <button onclick="getImages()">Get images</button>
- 
+    
+  <div class="form-cnt">
+    <form>
+      <div class="field">
+        <span>max number of images: </span>
+        <select name="number-images">
+                    <option disabled selected value>--</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+        </select>
+      </div>
+      <div class="field">
+        <span>category: </span>
+        <input type="text">
+      </div> 
+      <button class="field" onclick="return getImages()">Get images</button>
+    </form>
+  </div>
+  <div id="images">
+    
+  </div>
+   
 
  
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
